@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Candidato {
+  id                 String        @id @default(uuid())
+  nomeCompleto       String
+  email              String        @unique
+  telefone           String
+  dataNascimento     DateTime
+  bilheteIdentidade  String?
+  genero             String
+  estadoCivil        String?
+  provincia          String
+  foto               String?
+  fotoPublicId       String?
+  anosExperienciaInt Int           @default(0)
+  observacoes        String?
+  criadoEm           DateTime      @default(now())
+
+  formacoes          Formacao[]
+  candidaturas       Candidatura[]
+
+  @@map("candidatos")
+}
+
+model Vaga {
+  id           String        @id @default(uuid())
+  titulo       String
+  descricao    String?
+  departamento String
+  criadoEm     DateTime      @default(now())
+
+  candidaturas Candidatura[]
+
+  @@map("vagas")
+}
+
+model Candidatura {
+  id          String    @id @default(uuid())
+  estado      String    @default("Em análise")
+  criadoEm    DateTime  @default(now())
+
+  candidatoId String
+  vagaId      String
+
+  candidato   Candidato @relation(fields: [candidatoId], references: [id], onDelete: Cascade)
+  vaga        Vaga      @relation(fields: [vagaId], references: [id], onDelete: Cascade)
+
+  @@map("candidaturas")
+}
+
+model Formacao {
+  id           String    @id @default(uuid())
+  instituicao  String
+  grau         String
+  curso        String
+  anoInicio    Int
+  anoConclusao Int?
+  aFrequentar  Boolean   @default(false)
+  pais         String    @default("Angola")
+
+  candidatoId  String
+
+  candidato    Candidato @relation(fields: [candidatoId], references: [id], onDelete: Cascade)
+
+  @@map("formacoes")
+}

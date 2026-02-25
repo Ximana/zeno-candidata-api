@@ -1,0 +1,13 @@
+# Dependências
+node_modules/
+
+# Variáveis de ambiente 
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# IDEs e editores
+.vscode/
