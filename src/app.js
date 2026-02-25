@@ -16,7 +16,7 @@ app.use(express.json({ limit: "10mb" }));  // Limite maior para aceitar fotos em
 
 // --- Rota de teste (health check) ---
 app.get("/", (req, res) => {
-  res.json({ mensagem: "API RecrutaApp a funcionar!" });
+  res.json({ mensagem: "API a funcionar!" });
 });
 
 // --- Rotas dos módulos ---
