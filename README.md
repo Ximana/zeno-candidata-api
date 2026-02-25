@@ -1,6 +1,6 @@
 # Zeno candidata - API
 
-API REST para o da Zeno, desenvolvida com **Express.js**, **PostgreSQL** e **Prisma ORM**. Suporta upload de fotos de candidatos via **Cloudinary**.
+API REST para a App Zeno candidato, desenvolvida com **Express.js**, **PostgreSQL** e **Prisma ORM**. Com upload de fotos de candidatos via **Cloudinary**.
 
 ## Tecnologias
 
@@ -11,22 +11,26 @@ API REST para o da Zeno, desenvolvida com **Express.js**, **PostgreSQL** e **Pri
 ## Instalação
 
 **1. Clonar o repositório**
+
 ```bash
 git clone https://github.com/Ximana/zeno-candidata-api.git
 cd zeno-candidata-api
 ```
 
 **2. Instalar dependências**
+
 ```bash
 npm install
 ```
 
 **3. Configurar o `.env`**
+
 ```bash
 cp .env.example .env
 ```
 
 Preenche o `.env` com os teus dados:
+
 ```env
 DATABASE_URL="postgresql://utilizador:password@localhost:5432/recrutaapp"
 PORT=3001
@@ -34,34 +38,29 @@ CLOUDINARY_CLOUD_NAME="o_teu_cloud_name"
 CLOUDINARY_API_KEY="a_tua_api_key"
 CLOUDINARY_API_SECRET="o_teu_api_secret"
 ```
+
 > As credenciais do Cloudinary encontras em **cloudinary.com**.
 
 **4. Criar as tabelas na base de dados**
+
 ```bash
 npm run db:migrate
 ```
-**5.  Popular com dados de exemplo (opcional)**
+
+**5. Popular com dados de exemplo (opcional)**
+
 ```bash
 npm run db:seed
 ```
 
 **6. Iniciar o servidor**
+
 ```bash
-npm run dev      # desenvolvimento (reinicia ao guardar)
+npm run dev      # desenvolvimento
 npm start        # produção
 ```
 
 Servidor disponível em `http://localhost:3001`
-
-## Scripts
-
-| Comando | Descrição |
-|---------|-----------|
-| `npm run dev` | Servidor em modo desenvolvimento |
-| `npm start` | Servidor em modo produção |
-| `npm run db:migrate` | Cria/actualiza tabelas na base de dados |
-| `npm run db:seed` | Popula a base de dados com dados de exemplo |
-| `npm run db:studio` | Abre o Prisma Studio |
 
 ## Estrutura
 
@@ -85,7 +84,7 @@ zeno-candidata-api/
 │   │   ├── candidatos/
 │   │   │   ├── candidato.rotas.js
 │   │   │   ├── candidato.controlador.js
-│   │   │   └── candidato.servico.js    # Inclui lógica de formações
+│   │   │   └── candidato.servico.js
 │   │   ├── vagas/
 │   │   │   ├── vaga.rotas.js
 │   │   │   ├── vaga.controlador.js
