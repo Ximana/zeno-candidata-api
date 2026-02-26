@@ -13,7 +13,7 @@ router.post("/", upload.single("foto"), controlador.criar);
 router.put("/:id", upload.single("foto"), controlador.actualizar);
 router.delete("/:id", controlador.remover);
 
-// Rotas de formações (sem upload de imagem)
+// Rotas de formações
 router.get("/:id/formacoes", controlador.listarFormacoes);
 router.post("/:id/formacoes", controlador.adicionarFormacao);
 router.put("/:id/formacoes/:formacaoId", controlador.actualizarFormacao);

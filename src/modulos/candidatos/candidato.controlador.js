@@ -1,7 +1,7 @@
 const servico = require("./candidato.servico");
 const { validarCandidato, validarFormacao } = require("../../middlewares/validacao");
 
-// --- CANDIDATOS ---
+// CANDIDATOS
 async function listar(req, res, next) {
   try {
     const candidatos = await servico.listarCandidatos();
@@ -60,7 +60,7 @@ async function remover(req, res, next) {
   }
 }
 
-// --- FORMAÇÕES ---
+// FORMAÇÕES
 
 async function listarFormacoes(req, res, next) {
   try {
