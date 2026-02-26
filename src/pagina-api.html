@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zeno candidatura teste API</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 max-w-2xl mx-auto px-6 py-12">
+
+  <!-- Cabeçalho -->
+  <div class="mb-10">
+    <div class="flex items-center gap-2 mb-3">
+      <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+      <span class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Online</span>
+    </div>
+    <h1 class="text-3xl font-bold text-gray-900">Zeno candidatura teste API</h1>
+    <p class="text-gray-500 mt-1">Express.js · Prisma · PostgreSQL · Cloudinary</p>
+    <div class="mt-4 flex items-center gap-2 font-mono text-sm bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5">
+      <span class="text-gray-400">Base URL</span>
+      <span class="text-gray-300">·</span>
+      <span id="base-url" class="text-green-700 font-semibold">—</span>
+    </div>
+  </div>
+
+  <!-- Endpoints -->
+  <div class="mb-10 space-y-7">
+
+    <!-- Candidatos -->
+    <div>
+      <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">👤 Candidatos</p>
+      <div class="divide-y divide-gray-100 border border-gray-200 rounded-lg overflow-hidden">
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-blue-600 font-bold w-10">GET</span><span>/api/candidatos</span></div>
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-blue-600 font-bold w-10">GET</span><span>/api/candidatos/<span class="text-green-700">:id</span></span></div>
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-green-600 font-bold w-10">POST</span><span>/api/candidatos</span><span class="ml-auto text-xs text-gray-400">multipart/form-data</span></div>
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-yellow-600 font-bold w-10">PUT</span><span>/api/candidatos/<span class="text-green-700">:id</span></span></div>
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-red-500 font-bold w-10">DEL</span><span>/api/candidatos/<span class="text-green-700">:id</span></span></div>
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-blue-600 font-bold w-10">GET</span><span>/api/candidatos/<span class="text-green-700">:id</span>/formacoes</span></div>
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-green-600 font-bold w-10">POST</span><span>/api/candidatos/<span class="text-green-700">:id</span>/formacoes</span></div>
+      </div>
+    </div>
+
+    <!-- Vagas -->
+    <div>
+      <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">💼 Vagas</p>
+      <div class="divide-y divide-gray-100 border border-gray-200 rounded-lg overflow-hidden">
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-blue-600 font-bold w-10">GET</span><span>/api/vagas</span></div>
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-blue-600 font-bold w-10">GET</span><span>/api/vagas/<span class="text-green-700">:id</span></span></div>
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-green-600 font-bold w-10">POST</span><span>/api/vagas</span></div>
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-yellow-600 font-bold w-10">PUT</span><span>/api/vagas/<span class="text-green-700">:id</span></span></div>
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-red-500 font-bold w-10">DEL</span><span>/api/vagas/<span class="text-green-700">:id</span></span></div>
+      </div>
+    </div>
+
+    <!-- Candidaturas -->
+    <div>
+      <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">📄 Candidaturas</p>
+      <div class="divide-y divide-gray-100 border border-gray-200 rounded-lg overflow-hidden">
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-blue-600 font-bold w-10">GET</span><span>/api/candidaturas</span></div>
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-blue-600 font-bold w-10">GET</span><span>/api/candidaturas/<span class="text-green-700">:id</span></span></div>
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-green-600 font-bold w-10">POST</span><span>/api/candidaturas</span></div>
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-yellow-600 font-bold w-10">PUT</span><span>/api/candidaturas/<span class="text-green-700">:id</span></span></div>
+        <div class="flex items-center gap-3 px-4 py-2.5 text-sm font-mono hover:bg-gray-50"><span class="text-red-500 font-bold w-10">DEL</span><span>/api/candidaturas/<span class="text-green-700">:id</span></span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Rodapé -->
+  <p class="text-xs text-gray-400">Node.js · Express · Prisma · PostgreSQL · Cloudinary · Multer</p>
+
+  <script>
+    document.getElementById("base-url").textContent = window.location.origin;
+  </script>
+
+</body>
+</html>

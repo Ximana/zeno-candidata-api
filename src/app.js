@@ -1,7 +1,6 @@
-// Configura o Express, middlewares globais e rotas
-
 const express = require("express");
 const cors = require("cors");
+const path    = require("path");
 
 const candidatoRotas = require("./modulos/candidatos/candidato.rotas");
 const vagaRotas = require("./modulos/vagas/vaga.rotas");
@@ -14,9 +13,9 @@ const app = express();
 app.use(cors());           // Permite pedidos do frontend
 app.use(express.json({ limit: "10mb" }));  // Limite maior para aceitar fotos em base64
 
-// --- Rota de teste (health check) ---
+// Rota inicial com uma pagina html
 app.get("/", (req, res) => {
-  res.json({ mensagem: "API a funcionar!" });
+  res.sendFile(path.join(__dirname, "pagina-api.html"));
 });
 
 // --- Rotas dos módulos ---
